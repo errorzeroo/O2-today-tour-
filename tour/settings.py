@@ -32,18 +32,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
-    'common.apps.CommonConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "mypage_app",
-    "dist_app",
-    "home_app",
-    "recommend_app",
-    "schdule_app"
+    "common",
+    "accounts"
 ]
 
 MIDDLEWARE = [
@@ -56,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'tour.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'tour.wsgi.application'
 
 
 # Database
