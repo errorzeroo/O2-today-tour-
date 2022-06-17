@@ -23,6 +23,7 @@ urlpatterns = [
     path("dist_app/", include("dist_app.urls")),
     path("recommend_app/", include("recommend_app.urls")),
     path("schedule_app/", include("schedule_app.urls")),
+    path("home_app/",include("home_app.urls"))
 
 
     # path('dist_app/', include('dist_app.urls')),
