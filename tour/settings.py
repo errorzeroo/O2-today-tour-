@@ -40,7 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "common",
-    "accounts"
+    "accounts",
+    "dist_app",
+    "home_app",
+    "mypage_app",
+    "recommend_app",
+    "schedule_app"
+
 ]
 
 MIDDLEWARE = [
