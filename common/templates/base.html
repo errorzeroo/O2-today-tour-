@@ -17,9 +17,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
-
+        {% include 'navbar.html' %}
     <body>
-    {% include 'navbar.html' %}
+
     {% block content %}
 
 

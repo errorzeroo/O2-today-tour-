@@ -17,7 +17,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/todo/list')
+            return redirect('home_app/index')
     else:
         # 회원가입 폼을 응답한다.
         form = UserForm()
