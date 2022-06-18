@@ -25,7 +25,8 @@ urlpatterns = [
     path("recommend_app/", include("recommend_app.urls")),
     path("schedule_app/", include("schedule_app.urls")),
     path("",include("home_app.urls")),
-    path("", views.index, name="index")
+    path("", views.index, name="index"),
+    path("mypage_app/",include("mypage_app.urls"))
 
 
 
