@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 #title{
+    font-family: 'Jua', sans-serif;
     text-align: center;
-    font-size: large;
-    color: blue;
+    font-size: 30px;
+    color: rgb(48, 48, 121);
 }
