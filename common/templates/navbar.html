@@ -20,7 +20,10 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'accounts:logout' %}">{{user}}님 로그아웃</a></li>  <!--True 일때 실행-->
                         {% else %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'accounts:login' %}">로그인</a></li>  <!--False 일때 실행-->
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'accounts:signup' %}">회원가입</a></li>
+
                         {% endif %}
+
                     </ul>
                 </div>
             </div>
