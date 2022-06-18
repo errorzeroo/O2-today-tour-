@@ -4,5 +4,7 @@ from . import views
 app_name = 'recommend_app'
 
 urlpatterns = [
-    path("index/",views.index, name='index')
+    path("",views.index, name='index'),
+    path('ver1/', views.ver1, name='ver1'),
+    path('ver2/', views.ver2, name= 'ver2')
 ]

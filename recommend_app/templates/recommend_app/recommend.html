@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h2>오늘 여행지 추천은?</h2>
+                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<link rel="stylesheet" href="{% static 'recommend_app/recommend.css'%}">
+
+<div id="myDIV" class="header">
+    <h1> 어디가지? </h1>
+    <input type="text" placeholder="내가 보고 싶은 제주는">
+    <span class="addBtn"> 검색 </span>
+</div>
+
+<div id="food"> 
+    <p> 추천 맛집 </p>
+    <div id="slideShow">
+        <div id="slides">
+            <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/76Cz/image/VTYqeWjv72cR1PmcqvUyfheB8Nk.jpg" alt="">
+            <img src="http://image14.hanatour.com/uploads/2019/12/%EC%A0%9C%EC%A3%BC%EB%A1%9C%EC%BB%AC%EB%A7%9B%EC%A7%91_%EB%8B%BB_(2)_88121031.jpg" alt="">
+            <img src="https://t1.daumcdn.net/liveboard/dailylife/d677fcc184aa4b269b838ced2b8d695e.JPG" alt="">
+            <button id="prev"> &lang; </button>
+            <button id="next"> &rang; </button>
+        </div>
+    </div>
+</div>
+
+<div id="place"> 
+    <p> 추천 명소 </p>
+    <div id="slideShow">
+        <div id="slides">
+            <img src="https://blog.kakaocdn.net/dn/o1KIw/btqu9mflPY6/rGk1mM3iugV1c6jj9Z3E80/img.jpg" alt="">
+            <img src="http://image14.hanatour.com/uploads/2019/06/IMG_1205_copy_84515839.jpg" alt="">
+            <img src="https://a.cdn-hotels.com/gdcs/production71/d1855/8e6557a6-543a-4304-8505-29532786e9c7.jpg?impolicy=fcrop&w=800&h=533&q=medium" alt="">
+            <button id="prev"> &lang; </button>
+            <button id="next"> &rang; </button>
+        </div>
+    </div>
+</div>
+
+<script src="recommend_app/recommend.js"></script>
+
+
+{% endblock %}

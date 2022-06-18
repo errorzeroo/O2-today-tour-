@@ -1,6 +1,6 @@
-{% extends 'base.html' %} <!--base.html로 부터 상속 받겠다-->
-{% block content %}
+{% extends 'base.html' %}
 {% load static %}
+{% block content%}
 <!-- Page Header-->
         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
@@ -14,4 +14,12 @@
                 </div>
             </div>
         </header>
+<link rel="stylesheet" href="{% static 'recommend_app/index.css'%}">
+    <!-- <img src="https://blog.kakaocdn.net/dn/buCYED/btqLD0nC9Jp/llAEkKCjugOwphF2gn1QA0/img.jpg"> -->
+    <h1> 내가 보고싶은 제주는 </h1>
+    <div id="top"> 내가 보고싶은 제주를 선택해주세요</div>
+    <div id="recommendation">
+        <a href="ver1"> 지역별 명소 추천 </a> <br> 
+        <a href="ver2"> 지역별 맛집 추천 </a>
+    </div>
 {% endblock %}
