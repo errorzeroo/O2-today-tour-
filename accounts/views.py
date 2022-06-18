@@ -7,6 +7,16 @@ from django.template import RequestContext
 from accounts.forms import UserForm
 
 
+
+
+
+#users/views.py
+from django.shortcuts import render
+from django.urls import reverse
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
+
+
 def signup(request):
     if request.method == 'POST':
         # 회원가입에 필요한 코드 작성
