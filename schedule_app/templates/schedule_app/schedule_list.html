@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('#')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -14,44 +14,30 @@
                 </div>
             </div>
         </header>
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
+<h3>When?</h3>
+<input type="date" id="startdate"> ~ <input type="date" id="enddate"><input id="datebtn" type="submit" value="입력">
+
+<!-- input으로 입력받은 날짜 출력 -->
+{% for list in schedule_list %}
+        <p>{{ list.startdate | date:"d" }}</p> <!--date:"d" = 날짜 형식에서 day만 출력-->
+        <p>{{ list.enddate }}</p>
+
+<!--날짜 범위 출력-->
+{% for minus in daterange %}
+        <p>{{ minus.daterange }}</p> <!--실행안됨ㅠ-->
+{% endfor %}
+
+{% endfor %}
+
+<p></p>
+
+<input type="text"> <input id="destbtn" type="button" value="입력">
+
+
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>-->
         <!-- Core theme JS-->
-        <script src="{% static 'scripts.js' %}"></script>
+        <script src="{% static 'schedule_app/schedule.js' %}"></script>
+
 {% endblock %}
