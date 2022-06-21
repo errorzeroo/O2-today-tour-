@@ -17,14 +17,15 @@
 </style>
 </head>
 
+<link rel="stylesheet" href="{% static 'dist_app/index.css'%}">
 <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('https://r1.community.samsung.com/t5/image/serverpage/image-id/97013i0A48A54A0ABC0C2D/image-size/large?v=v2&px=999')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h2>오늘은 어디로 갈까?</h2>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                            <span class="subheading">TODAY TOUR </span>
+                            <h2 id="star"> 제주도 푸른밤 그 별 아래 </h2>
                         </div>
                     </div>
                 </div>
@@ -32,27 +33,16 @@
         </header>
 
 
-<a href="{% url 'dist_app:index' %}">뚜벅이</a>
-<a href="{% url 'dist_app:marker' %}">여행지추천</a>
-
+<p align="middle" id="dist"> 내가 보고싶은 제주도</p>
 <!-- 지도를 표시할 div 입니다 -->
 
-
-
-<div id="map" style="width:50%;height:400px;"></div>
-<p>
-    <em>지도를 마우스로 클릭하면 선 그리기가 시작되고<br>오른쪽 마우스를 클릭하면 선 그리기가 종료됩니다</em>
+<div id="map" style="width:50%;height:400px; margin:0 auto"></div>
+<p align="middle" id="add_text">
+    <em> ( 지도를 마우스로 클릭하면 선 그리기가 시작되고, 오른쪽 마우스를 클릭하면 선 그리기가 종료됩니다 )</em>
 </p>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=627103604d18d2289930b62ebcc65f7b"></script>
 
-<body>
-<div id="map" style="width:100%;height:350px;"></div>
-<p>
-    <em>지도를 마우스로 클릭하면 선 그리기가 시작되고<br>오른쪽 마우스를 클릭하면 선 그리기가 종료됩니다</em>
-</p>
-
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
@@ -497,6 +487,28 @@ function makeOutListener(infowindow) {
 
 
 </script>
+<hr/>
+<link rel="stylesheet" href="{% static 'dist_app/index.css'%}">
+<p id="dist">제주도 맛집/명소 추천 </p>
+<div id="recommendation">
+    <fieldset id="fs" style="height:20; width: 65%; border: 1px solid; margin : 0 auto;">
+        <legend id="jeju_text"> JEJU ISLAND </legend>
+        <input type="radio" name="radio" value="제주시" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/jeju/';"> 제주시 &emsp;
+        <input type="radio" name="radio" value="애월" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/aewol/';"> 애월 &emsp;
+        <input type="radio" name="radio" value="한림" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/hanlim/';"> 한림 &emsp;
+        <input type="radio" name="radio" value="한경" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/hankyung/';"> 한경 &emsp;
+        <input type="radio" name="radio" value="대정" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/daejung/';"> 대정 &emsp;
+        <input type="radio" name="radio" value="안덕" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/andeok/';"> 안덕 &emsp;
+        <input type="radio" name="radio" value="중문" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/jungmun/';" > 중문 &emsp;
+        <input type="radio" name="radio" value="서귀포시" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/seogwipo/';"> 서귀포시 &emsp;
+        <input type="radio" name="radio" value="남원" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/namwon/';"> 남원 &emsp;
+        <input type="radio" name="radio" value="표선" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/pyosun/';"> 표선 &emsp;
+        <input type="radio" name="radio" value="성산" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/seongsan/';" > 성산 &emsp;
+        <input type="radio" name="radio" value="구좌" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/gujwa/';"> 구좌 &emsp;
+        <input type="radio" name="radio" value="조천" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/jocheon/';"> 조천 &emsp;
+    </fieldset>
+<br><br>
+</div>
 </body>
 
 

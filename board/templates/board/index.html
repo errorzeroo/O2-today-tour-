@@ -2,13 +2,13 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'board/index.css' %}">
-<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('http://wetravel.cafe24.com/data/editor/1808/20180802112254_c4835f6ce5c51f178656a5ecd3471d53_d9c1.png')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h2>오늘은 어디로 갈까?</h2>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+							<span class="subheading" style="color: orange;">TODAY TOUR</span>
+                            <h2 id="ocean" style="font-size:35px; margin-top: 10px;"> 바다의 속삭임이 좋아요 </h2>
                         </div>
                     </div>
                 </div>
@@ -18,18 +18,17 @@
         <div class="header">
             <h2>{{ title }}</h2>
         </div>
-        <div style="text-align:right">
+        <div id="write">
             <a href="{% url 'board:write' %}">글쓰기</a>
         </div>
 
         <div style="height:280px;">
-            <table class="board">
+            <table class="board" style="width:1200;">
                 <thead>
                     <tr class="header">
                         <th style="width:10%;">순번</th>
                         <th style="width:60%">제목</th>
                         <th style="width:30%">작성일자</th>
-                        <th>삭제</th>
                     </tr>
                 </thead>
                 <tbody>

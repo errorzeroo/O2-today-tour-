@@ -1,8 +1,10 @@
 {% extends 'base.html' %} <!--base.html로 부터 상속 받겠다-->
 {% block content %}
+{% load my_custom_tags %}
 {% load static %}
+
 <!-- Page Header-->
-        <header class="masthead" style="background-image: url('#')">
+        <header class="masthead" style="background: url('') center no-repeat">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -15,29 +17,45 @@
             </div>
         </header>
 
-<h3>When?</h3>
-<input type="date" id="startdate"> ~ <input type="date" id="enddate"><input id="datebtn" type="submit" value="입력">
+<h3>How long?</h3>
+<input type="number" id="during" min="1" max="10" value="1">일 (최대 10일)<button id="submit">입력</button><br><br><br>
 
-<!-- input으로 입력받은 날짜 출력 -->
-{% for list in schedule_list %}
-        <p>{{ list.startdate | date:"d" }}</p> <!--date:"d" = 날짜 형식에서 day만 출력-->
-        <p>{{ list.enddate }}</p>
 
-<!--날짜 범위 출력-->
-{% for minus in daterange %}
-        <p>{{ minus.daterange }}</p> <!--실행안됨ㅠ-->
+
+<h3>Where?</h3>
+
+<!--i가 days에 들어가면됨   day1,day2 값 DB에 넣을때-->
+
+
+{% for i in day %}
+    <div>
+        day{{ i }}<input type="text" id="{{ i }}"><input type="button" class="btn{{ i }}" value="입력">
+        <input type="hidden" value="{{ tour_id }}" id="hidden{{ i }}">
+    </div><br><br>
+
+    <div>{{ place_list }}</div>
 {% endfor %}
 
-{% endfor %}
-
-<p></p>
-
-<input type="text"> <input id="destbtn" type="button" value="입력">
 
 
         <!-- Bootstrap core JS-->
 <!--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>-->
         <!-- Core theme JS-->
-        <script src="{% static 'schedule_app/schedule.js' %}"></script>
+<script>
+    let datebtn = document.querySelector('#submit');
+    datebtn.addEventListener('click',function(){
+    const during = document.getElementById("during").value;
+
+    window.location.href = '/schedule_app/create?during='+during;
+    }, false);
+
+
+let placebtn = document.querySelector('.mj1');
+    placebtn.addEventListener('click',function(){
+//    const during = document.getElementById("during").value;
+//    const place = document.getElementById("1").value;
+    window.location.href = '/schedule_app/day';
+    }, false);
+</script>
 
 {% endblock %}

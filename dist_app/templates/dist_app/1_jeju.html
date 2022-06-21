@@ -2,13 +2,13 @@
 {% load static %}
 {% block content%}
 <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('https://r1.community.samsung.com/t5/image/serverpage/image-id/97013i0A48A54A0ABC0C2D/image-size/large?v=v2&px=999')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <span class="subheading">TODAY TOUR</span>
-                            <h2>내가 보고싶은 제주는</h2>
+                            <span class="subheading">TODAY TOUR </span>
+                            <h2 id="star"> 제주도 푸른밤 그 별 아래 </h2>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,6 @@
         </header>
 <link rel="stylesheet" href="{% static 'dist_app/jeju.css'%}">
 <h1 id="title"> 오늘 <span id="jeju">제주시</span>에는 :) </h1> <br>
-
 
     <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
@@ -320,12 +319,10 @@ function removeAllChildNods(el) {
         el.removeChild (el.lastChild);
     }
 }
-
-
 </script>
 
-    <div>
-    <button id="back" onclick="history.back()" style="margin : auto"> 뒤로가기 </button>
+<div>
+    <button id="back" onclick="history.back()"> 뒤로가기 </button>
 </div>
         <!-- Footer-->
         <footer class="border-top">

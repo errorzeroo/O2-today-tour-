@@ -13,7 +13,9 @@ thead {
         }
 
         .board {
-            width: 100%
+            width: 1200px;
+            margin-left: -75%;
+            border: 1.5px solid;
         }
 
         .even_bgcolor {
@@ -38,3 +40,25 @@ thead {
             color: #7b7b7b;
             font-size: small;
         }
+
+.subheading{
+    color: orange;
+}
+
+#ocean{
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+#write{
+    text-align: right;
+    margin-right: -75%;
+}
+
+tr{
+    text-align: center;
+}
+
+th, tr, td{
+    border: 0.5px solid;
+}

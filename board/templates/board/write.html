@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'board/detail.css' %}">
-<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+<link rel="stylesheet" href="{% static 'board/write.css' %}">
+<header class="masthead" style="background-image: url('http://wetravel.cafe24.com/data/editor/1808/20180802112254_c4835f6ce5c51f178656a5ecd3471d53_d9c1.png')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h2>오늘은 어디로 갈까?</h2>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+							<span class="subheading">TODAY TOUR</span>
+                            <h2 id="ocean"> 바다의 속삭임이 좋아요 </h2>
                         </div>
                     </div>
                 </div>
@@ -18,21 +18,21 @@
 		<form action="{% url 'board:write_board' %}" method="post">
 		{% csrf_token %}
 
-		<div style="text-align:right;padding: 5px;">
-			<input type="submit" value="저장">
+		<div id="home">
+			<a href="{% url 'board:index' %}"> >Home</a>
 		</div>
 
 		<table class="board_for_read">
 			<tbody>
 				<tr>
-					<td class="td_title" style="text-align:center; width:20%;">제목</td>
-					<td style="padding:10px;">
+					<td class="td_title">제목</td>
+					<td>
 						<input type="text" name="title" id="title" value="{{ board.title }}"/>
 					</td>
 				</tr>
 				<tr>
-					<td class="td_title" style="text-align:center;">내용</td>
-					<td style="padding:10px;">
+					<td class="td_title">내용</td>
+					<td>
 						<textarea name="detail" id="detail" rows="10">{{ board.content }}</textarea>
 					</td>
 				</tr>
@@ -40,9 +40,11 @@
 		</table>
 		</form>
 
-		<div style="text-align:left;">
-			<a href="{% url 'board:index' %}">> Home</a>
+		<div id="save">
+			<input type="submit" value="저장">
 		</div>
+
+
 
     </div>
 {% endblock %}
