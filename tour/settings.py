@@ -25,14 +25,14 @@ SECRET_KEY = 'django-insecure-9&ugw^1#elsl8^q60ch966o99=ro!!f1mj*@&p=jie$&!(*j!x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
 
-
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     "dist_app",
     "home_app",
     "mypage_app",
-    "recommend_app",
-    "schedule_app"
+    "schedule_app",
+    "board"
 
 ]
 

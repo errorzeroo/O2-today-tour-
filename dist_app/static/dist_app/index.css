@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+#jeju_text{
+    font-family: 'Jua', sans-serif;
+}
+
+#recommendation{
+    font-size: 15px;
+    text-align: center;
+    border: #999;
+}
+
+#img{
+    width: 30px;
+    height: 30px;
+    float: left;
+}

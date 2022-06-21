@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'board/index.css' %}">
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h2>오늘은 어디로 갈까?</h2>
+                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<div class="container" style="max-width:500px;">
+	<form method="POST">
+	  {% csrf_token %}
+	  {% bootstrap_form boardForm %}
+	  <input class="btn btn-dark rounded-pill col-12" type="submit" value="수정하기" onclick="location.href='/edit/{{board.pk}}/'">
+  </form>
+</div>
+
+{% endblock %}
