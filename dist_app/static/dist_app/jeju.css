@@ -23,6 +23,6 @@
 }
 
 #back{
-    position: static;
-    margin: auto;
+    float: right;
+    margin-right: 30px;
 }
