@@ -5,7 +5,8 @@
         }
 
 		.reply_content {
-			text-align:right
+			text-align:right;
+			margin-right: -75%;
 		}
 
 		.reply_content .reply{

@@ -16,16 +16,16 @@
         </header>
 <div class="content">
         <div class="header">
-            <h2>{{ title }}</h2>
+            <h2 id="h2"> 혼자 옵서예 <span id="injeju">IN JEJU</span> </h2>
         </div>
         <div id="write">
-            <a href="{% url 'board:write' %}">글쓰기</a>
+            <a href="{% url 'board:write' %}" id="text_write" style="font-size:15px;"><u><b>글쓰기</b></u></a>
         </div>
 
         <div style="height:280px;">
             <table class="board" style="width:1200;">
                 <thead>
-                    <tr class="header">
+                    <tr class="header" id="header">
                         <th style="width:10%;">순번</th>
                         <th style="width:60%">제목</th>
                         <th style="width:30%">작성일자</th>
@@ -56,19 +56,18 @@
         <!-- Pagination -->
         <div style="text-align:center">
             <div class="pagination">
-
-                <div style="width:35%; margin: 5px;">
+                <div style="width:40%; margin: 5px;">
                 {% if board_list.has_previous %}
-                    <a class="abutton" href="?page=1">맨 앞으로</a>
-                    <a class="abutton" href="?page={{ board_list.previous_page_number }}">이전</a>
+                    <a class="abutton" href="?page=1" style="font-size: 15px; background-color:white;"><u>맨앞으로</u></a>  &nbsp;
+                    <a class="abutton" href="?page={{ board_list.previous_page_number }}" style="font-size: 15px; background-color:white;"><u>이전</u></a>
                 {% endif %}
                 </div>
 
-                <div style="width:30%; margin: 5px;">
+                <div style="width:30%; margin: 5px; font-size:25px; font-family: 'Jua', sans-serif;">
                 {% for page in board_list.paginator.page_range %}
                     {% if page >= board_list.number|add:-2 and page <= board_list.number|add:2 %}
                     <span class="{% if page == board_list.number %}current{% endif %}">
-                        <a href="?page={{ page }}">{{ page}}</a>
+                        <a id="num" href="?page={{ page }}">{{ page}}</a>
                     </span>
                     {% elif page >= board_list.number|add:-3 and page <= board_list.number|add:3 %}
                         ..
@@ -78,8 +77,8 @@
 
                 <div style="width:35%; margin: 5px;">
                 {% if board_list.has_next %}
-                    <a class="abutton" href="?page={{ board_list.next_page_number }}">다음</a>
-                    <a class="abutton" href="?page={{ board_list.paginator.num_pages }}">맨 뒤로</a>
+                    <a class="abutton" href="?page={{ board_list.next_page_number }}"  style="font-size: 15px; background-color:white;"><u>다음</u></a>  &nbsp;
+                    <a class="abutton" href="?page={{ board_list.paginator.num_pages }}"  style="font-size: 15px; background-color:white;"><u>맨뒤로</u></a>
                 {% endif %}
                 </div>
 

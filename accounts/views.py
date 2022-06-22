@@ -31,4 +31,4 @@ def signup(request):
     else:
         # 회원가입 폼을 응답한다.
         form = UserForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+    return render(request, 'accounts/signup_1.html', {'form': form})

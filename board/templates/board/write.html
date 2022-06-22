@@ -36,15 +36,23 @@
 						<textarea name="detail" id="detail" rows="10">{{ board.content }}</textarea>
 					</td>
 				</tr>
+
+				<tr>
+					<td class="td_title">파일첨부</td>
+					<td>
+						<input type="file" id="img" required multiple>
+					</td>
+				</tr>
 			</tbody>
 		</table>
-		</form>
 
 		<div id="save">
 			<input type="submit" value="저장">
 		</div>
 
-
+		</form>
 
     </div>
+
+	<script src="{% static 'write.js' %}"></script>
 {% endblock %}
