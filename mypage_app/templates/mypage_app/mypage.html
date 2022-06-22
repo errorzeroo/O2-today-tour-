@@ -16,9 +16,32 @@
             </div>
         </header>
 
-<h1>{{ user.pk }} : {{ user.username }}</h1>
+<h1>{{ user.username }} 님 안녕하세요!</h1>
 <hr>
-<a> {{user}} 님 안녕하세요! </a>
+<a> 아이디 :  {{user}} </a>
+<br>
+<a> 이메일 :  {{user.email}} </a>
+<br>
+<button class="btn btn-primary"><a href="{% url 'mypage_app:update'%}">계정수정</a></button>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link {% if profile_type == 'base' %}active{% endif %}">기본정보</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if profile_type == 'question' %}active{% endif %}">게시글</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if profile_type == 'answer' %}active{% endif %}">답변</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {% if profile_type == 'comment' %}active{% endif %}">여행지 즐겨찾기</a>
+    </li>
+</ul>
+
+
+
+
 
 
         <!-- Footer-->
