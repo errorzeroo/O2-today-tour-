@@ -49,7 +49,7 @@
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
-        center: new kakao.maps.LatLng(33.46491256585191, 126.89779478849705), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(33.32636792451527, 126.28398665835896), // 지도의 중심좌표
         level: 7 // 지도의 확대 레벨
     };
 
@@ -341,7 +341,7 @@ var startDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red
 var startDragImage = new kakao.maps.MarkerImage(startDragSrc, startDragSize, startDragOption);
 
 // 출발 마커가 표시될 위치입니다
-var startPosition = new kakao.maps.LatLng(33.47665473073692,126.89625326024604);
+var startPosition = new kakao.maps.LatLng(33.33367304467781,126.25597395039351);
 
 // 출발 마커를 생성합니다
 var startMarker = new kakao.maps.Marker({
@@ -382,7 +382,7 @@ var arriveDragSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/bl
 var arriveDragImage = new kakao.maps.MarkerImage(arriveDragSrc, arriveDragSize, arriveDragOption);
 
 // 도착 마커가 표시될 위치입니다
-var arrivePosition = new kakao.maps.LatLng(33.454957641461576, 126.9282891964056);
+var arrivePosition = new kakao.maps.LatLng(33.30696732802056, 126.28784702919545);
 
 // 도착 마커를 생성합니다
 var arriveMarker = new kakao.maps.Marker({
@@ -407,44 +407,25 @@ kakao.maps.event.addListener(arriveMarker, 'dragend', function() {
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
 var positions = [
     {
-        content: '<div>2. 말미오름</div>',
-        latlng: new kakao.maps.LatLng(33.47607619812092, 126.88436560305558)
+        content: '<div>1. 저지예술마을</div>',
+        latlng: new kakao.maps.LatLng(33.333663868309245, 126.25594717642653)
     },
+
     {
-        content: '<div>3. 알오름</div>',
-        latlng: new kakao.maps.LatLng(33.47607619812092, 126.88436560305558)
+        content: '<div>2. 강정동산</div>',
+        latlng: new kakao.maps.LatLng(33.33361999457958, 126.276757842304)
     },
-    {
-        content: '<div>4. 종달리 옛 소금밭</div>',
-        latlng: new kakao.maps.LatLng(33.49189181620716, 126.9017122596799)
+   {
+        content: '<div>3. 저지곶자왈</div>',
+        latlng: new kakao.maps.LatLng(33.33361999457958, 126.276757842304)
     },
-    {
-        content: '<div>5. 목화휴게소</div>',
-        latlng: new kakao.maps.LatLng(33.481762258394355, 126.90169142285922)
+   {
+        content: '<div>4. 문도지오름</div>',
+        latlng: new kakao.maps.LatLng(33.32618533180972, 126.29462065831164)
     },
-    {
-        content: '<div>6. 시흥해녀의집</div>',
-        latlng: new kakao.maps.LatLng(33.47792648795158, 126.90831248828744)
-    },
-        {
-        content: '<div>7. 성산일출봉</div>',
-        latlng: new kakao.maps.LatLng(33.459025891219625, 126.94056986558017)
-    },
-        {
-        content: '<div>8. 성산포항</div>',
-        latlng: new kakao.maps.LatLng(33.47380925179649, 126.93455658283938)
-    },
-            {
-        content: '<div>9. 수마포해안</div>',
-        latlng: new kakao.maps.LatLng(33.4602450011539, 126.93542731482071)
-    },
-            {
-        content: '<div>10. 광치기 해변</div>',
-        latlng: new kakao.maps.LatLng(33.45546264260858, 126.92846087900288)
-    },
-            {
-        content: '<div>1. 시흥리 정류장</div>',
-        latlng: new kakao.maps.LatLng(33.47665473073692, 126.89625326024604)
+   {
+        content: '<div>5.오설록차밭</div>',
+        latlng: new kakao.maps.LatLng(33.30696732802056, 126.28784702919545)
     },
 
 ];

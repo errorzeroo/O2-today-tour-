@@ -6,6 +6,8 @@ app_name = 'dist_app'
 
 urlpatterns = [
     path("index/",views.index, name = "index"),
+    path("index2/",views.index_2, name = "index2"),
+    path("index3/",views.index_3, name = "index3"),
     path("marker/",views.marker, name = "marker"),
     path('jeju/', views.jeju, name='jeju'),
     path('aewol/', views.aewol, name='aewol'),

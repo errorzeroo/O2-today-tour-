@@ -4,6 +4,12 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'dist_app/dist_app.html')
 
+def index_2(request):
+    return render(request, 'dist_app/dist_app_2.html')
+
+def index_3(request):
+    return render(request, 'dist_app/dist_app_3.html')
+
 def marker(request):
     return render(request, 'dist_app/dist_app_marker.html')
 
