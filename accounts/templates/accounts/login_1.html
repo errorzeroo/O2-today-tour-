@@ -16,36 +16,34 @@
             </div>
         </header>
 
-        
-<link rel="stylesheet" href="{% static 'accounts/login_1.css' %}">
-<fieldset id="border">
-    <div class="login-box">
-        <img id="jeju-img" src="https://img.freepik.com/free-vector/a-collection-of-icons-that-symbolize-jeju-island-flat-design-style-vector-illustration_540284-260.jpg?w=2000" alt="jeju">
-    </div>
-
-    <div class="login_box">
-        <p id="text" style="font-size:30px; text-align: center;" ><b>Member Login </b> </p>
+<p id="sign-up"> <b>LOGIN</b> </p> <br>
+<div id="img_1">
+    <img id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx11GFBGQW9hy-KQbb-CQ6haFRIdM0Tem_r5jjrwOTYD84UT4NF64xjfsN-f8kTeY4DKs&usqp=CAU" alt="jeju_flower">
+    <img id="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx11GFBGQW9hy-KQbb-CQ6haFRIdM0Tem_r5jjrwOTYD84UT4NF64xjfsN-f8kTeY4DKs&usqp=CAU" alt="jeju_flower">
+</div>
+<div class="container my-3">
+    <div id="login_box">
         <form method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}">  <!-- 로그인 성공후 이동되는 URL -->
             {% include "form_errors.html" %}
             <div class="mb-3">
-                <label for="username" id="text">사용자ID</label>
+                <label style="margin-right:50px;" for="username">ID</label>
                 <input type="text" class="form-control" name="username" id="username"
                        value="{{ form.username.value|default_if_none:'' }}">
             </div>
             <div class="mb-3">
-                <label for="password" id="text">비밀번호</label>
+                <label for="password">PASSWORD</label>
                 <input type="password" class="form-control" name="password" id="password"
                        value="{{ form.password.value|default_if_none:'' }}">
             </div>
             <div id="Btn">
-                <button type="submit" class="btn btn-primary">로그인</button>
-                <button class="btn btn-primary"><a href="{% url 'accounts:signup'%}">회원가입</a></button>
+                <button style="background-color: rgb(238, 130, 148); border: none;" type="submit" class="btn btn-primary">로그인</button>
+                <button style="background-color: rgb(238, 130, 148); border: none;" class="btn btn-primary"><a href="{% url 'accounts:signup'%}">회원가입</a></button>
             </div>
         </form>
     </div>
-</fieldset>
-<br><br><br>
+</div>
+
 
 {% endblock %}

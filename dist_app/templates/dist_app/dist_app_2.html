@@ -33,17 +33,36 @@
         </header>
 
 
-<p align="middle" id="dist"> 너랑 걷고싶은 제주도</p>
-<button class="btn btn-primary"><a href="{% url 'dist_app:index'%}">1번 코스</a></button>
-<button class="btn btn-primary"><a href="{% url 'dist_app:index2'%}">2번 코스</a></button>
-<button class="btn btn-primary"><a href="{% url 'dist_app:index3'%}">3번 코스</a></button>
+<p id="dist"> 🐾 같이 걷자 제주올레길 🐾 </p>
+<div id="holder">
+
+    <div class="button" style="margin-right: 3%;">
+        <button class="btnText"><a href="{% url 'dist_app:index'%}">COURSE 1</a></button>
+        <div class="btnTwo">
+          <p class="btnText2">GO!</p>
+        </div>
+     </div>
+    
+     <div class="button" style="margin-right: 3%;">
+        <button class="btnText"><a href="{% url 'dist_app:index2'%}">COURSE 13</a></button>
+        <div class="btnTwo">
+            <p class="btnText2">GO!</p>
+        </div>
+     </div>
+
+     <div class="button" style="margin-right: 3%;">
+        <button class="btnText"><a href="{% url 'dist_app:index3'%}">COURSE 14-1</a></button>
+        <div class="btnTwo">
+            <p class="btnText2">GO!</p>
+        </div>
+     </div>
+</div>
 <!-- 지도를 표시할 div 입니다 -->
 
-<div id="map" style="width:50%;height:400px; margin:0 auto"></div>
-<p align="middle" id="add_text">
+<div id="map" style="width:50%;height:400px; margin: auto;"></div>
+<p id="add_text" style="margin-left: 28%;">
     <em> ( 지도를 마우스로 클릭하면 선 그리기가 시작되고, 오른쪽 마우스를 클릭하면 선 그리기가 종료됩니다 )</em>
 </p>
-
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=627103604d18d2289930b62ebcc65f7b"></script>
 
 <script>
@@ -474,16 +493,14 @@ function makeOutListener(infowindow) {
     };
 }
 
-
-
-
 </script>
+<img src="https://www.jejuolle.org/trail/kor/images/sub_course/sub_vmap_13.jpg" alt="코스13">
 <hr/>
 <link rel="stylesheet" href="{% static 'dist_app/index.css'%}">
 <div id="recommendation">
     <section style="margin: 10px;">
-        <fieldset id="fieldset" style="width: 75%; border-radius: 5px; padding: 5px; border:5px solid rgba(7, 15, 76, 0.5); background-color:#ffffff; margin-left: 15%;">
-        <legend id="jeju_text" style="width: 98%; margin-left:10px;background-color:rgba(7, 15, 76, 0.5); padding-left:10px; padding-top:5px; padding-right:120px; padding-bottom:5px; ; color:white; border-radius:15px; font-size:40px;" ><b> &emsp;&emsp;JEJU ISLAND</b></legend><br>
+        <fieldset id="fieldset" style="width: 75%; border-radius: 5px; padding: 5px; border:5px solid #9dcde3; background-color:#ffffff; margin-left: 15%;">
+        <legend id="jeju_text" style="width: 98%; margin-left:10px;background-color:#9dcde3; padding-left:10px; padding-top:5px; padding-right:120px; padding-bottom:5px; ; color:white; border-radius:15px; font-size:40px;" ><b> &emsp;&emsp;JEJU ISLAND</b></legend><br>
         <input type="radio" name="radio" value="제주시" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/jeju/';"> 제주시 &emsp;
         <input type="radio" name="radio" value="애월" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/aewol/';"> 애월 &emsp;
         <input type="radio" name="radio" value="한림" OnClick="window.location.href='http://127.0.0.1:8000/dist_app/hanlim/';"> 한림 &emsp;

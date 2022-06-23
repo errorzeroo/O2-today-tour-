@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from board.models import Board
+from django.db import models
 
 
 def index(request):
@@ -9,7 +11,10 @@ def index(request):
         user.username = request.POST["username"]
         user.save()
         return redirect("/")
-    return render(request, 'mypage_app/mypage.html')
+    boards = Board.objects.all()
+    context = {'boards':boards}
+
+    return render(request, 'mypage_app/mypage.html', context)
 
 
 def UPDATEView(request):
@@ -32,3 +37,7 @@ def UPDATEView(request):
 
 
         return redirect('/', user.username)
+
+
+# def home(request):
+#

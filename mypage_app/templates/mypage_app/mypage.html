@@ -3,26 +3,20 @@
 {% load static %}
 
 <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('https://www.popco.net/zboard/data/dica_forum_samsung/2015/07/27/147743295955b5c369685cd.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h2>오늘은 어디로 갈까?</h2>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                             <span class="subheading">TODAY TOUR</span>
+                            <h2 id="jeju"> 떠나요 제주도 >_< </h2>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-<h1>{{ user.username }} 님 안녕하세요!</h1>
-<hr>
-<a> 아이디 :  {{user}} </a>
-<br>
-<a> 이메일 :  {{user.email}} </a>
-<br>
-<button class="btn btn-primary"><a href="{% url 'mypage_app:update'%}">계정수정</a></button>
+<h1 align="middle">{{ user.username }} 님 안녕하세요!</h1>
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
@@ -39,6 +33,14 @@
     </li>
 </ul>
 
+<a> {{boards}} </a>
+
+<hr>
+<a> 아이디 :  {{user}} </a>
+<br>
+<a> 이메일 :  {{user.email}} </a>
+<br>
+<button class="btn btn-primary"><a href="{% url 'mypage_app:update'%}">계정수정</a></button>
 
 
 

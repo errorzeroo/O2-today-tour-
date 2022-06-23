@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Board(models.Model):
     """
@@ -10,7 +12,7 @@ class Board(models.Model):
     """
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=500)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     like_count = models.PositiveIntegerField(default=0) # 양수입력 필드
     pub_date = models.DateTimeField()
 
@@ -23,11 +25,9 @@ class Reply(models.Model):
         comment: 댓글내용
         rep_date: 작성일
     """
-    reply = models.ForeignKey(Board, on_delete=models.CASCADE)
+    author = models.ForeignKey(Board, on_delete=models.CASCADE,null=True)
     comment = models.CharField(max_length=200)
     rep_date = models.DateTimeField()
 
     def __str__(self):
         return self.comment
-
-

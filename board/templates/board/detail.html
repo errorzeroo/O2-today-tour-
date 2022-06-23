@@ -17,9 +17,11 @@
 <div class="content">
 
 	<div id="home">
-		<a href="{% url 'board:index' %}">> Home</a>
+		<a href="{% url 'board:index' %}"><u>> Home</u></a>
 	</div>
-		<table class="board_for_read">
+
+	<div>
+		<table class="board_for_read" >
 			<tbody>
 				<tr>
 					<td class="td_title" style="text-align:center; width:20%;">제목</td>
@@ -29,7 +31,7 @@
 				</tr>
 				<tr>
 					<td class="td_title" style="text-align:center; width:20%;">작성일자</td>
-					<td style="padding:10px;">
+					<td style="padding:10px; color: gray;">
 						<span>{{ board.pub_date }}</span>
 					</td>
 				</tr>
@@ -39,14 +41,9 @@
 						<textarea name="detail" id="detail" rows="10" readonly>{{ board.content }}</textarea>
 					</td>
 				</tr>
-
-				<tr>
-					<td class="td_title" style="text-align:center;">파일첨부</td>
-					<td> <img src="img" width="700px" alt="첨부파일"></td>
-				</tr>
 			</tbody>
 		</table>
-
+	</div>
 
 		<form action="{% url 'board:create_reply' board.id %}" method="post">
 		{% csrf_token %}
@@ -68,7 +65,7 @@
 
 		<div class="reply_content">
 			{% for rep in board.reply_set.all %}
-				<span class="reply">{{ rep.comment }} [{{ rep.rep_date|date:'Y-m-d H:i'}}]</span>
+				<span class="reply"><u>{{ rep.comment }} [{{ rep.rep_date|date:'Y-m-d H:i'}}]</u></span>
 			{% endfor %}
 		</div>
     </div>
