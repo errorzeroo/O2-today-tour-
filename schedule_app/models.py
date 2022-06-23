@@ -5,7 +5,7 @@ from django.db import models
 from tour import settings
 
 
-class adddate(models.Model):
+class Adddate(models.Model):
     during = models.IntegerField(null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -14,10 +14,11 @@ class adddate(models.Model):
         # db_table = 'schedule_app_adddate'
 
 
-class hotplace(models.Model):
-    tour = models.ForeignKey(adddate, on_delete=models.CASCADE)
-    days = models.IntegerField()
-    tour_place = models.CharField(max_length=100)
+class Hotplace(models.Model):
+    tour = models.ForeignKey(Adddate, on_delete=models.CASCADE, null=True)
+    days = models.IntegerField(null=True)
+    tour_place = models.CharField(max_length=100, null=True)
+    place_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        managed = True
+            managed = True

@@ -21,9 +21,9 @@
 <!--    <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202107/27/bda8b450-ba72-4484-9809-8b6ad2cfce1e.jpg"/>-->
 <!--    </div>-->
 <!--    <img src="https://picsum.photos/id/237/320/240" alt="" />-->
-    <h3>How long? 🧐 </h3><br>
-    <input class = 'text' type="number" id="during" min="1" max="10" value="1"><span class="text2">&nbsp;일</span>&ensp;<button id="submit"><span class="text1">입력</span></button>
-    <br><span class="text2">(최대 10일)</span>
+        <h3>How long? 🧐 </h3><br>
+        <input class = 'text' type="number" id="during" min="1" max="10" value="1"><span class="text2">&nbsp;일</span>&ensp;<button id="submit"><span class="text1">입력</span></button>
+        <br><span class="text2">(최대 10일)</span>
 
     <br><br><br><br>
 
@@ -31,12 +31,36 @@
 
     {% for i in day %}
         <span> Day {{ i }}</span>&nbsp;<input type="text" id="place{{i}}" class="{{i}}">&nbsp;<button class="btntest" value="{{i}}"><span class="text1">입력</span></button>
-    <br><br>
+        <br><br>
         <input type="hidden" id="test{{i}}" name="test" value="{{ i }}">
         <input type="hidden" id="fk" name="fk" value="{{ tour_id }}">
     {% endfor %}
+
     <br><br>
+
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Place</th>
+        <th>Del</th>
+    </tr>
+
+    {% for place in hotplace_list.all %}
+
+        <tr>
+            <td>{{ place.days }}일차</td>
+            <td>{{ place.tour_place }}</td>
+            <td><a href="{% url 'schedule_app:delete' place.id %}">X</a></td>
+        </tr>
+
+    {% endfor %}
+</table>
+
+
+
 </div>
+
+
 
 
         <!-- Bootstrap core JS-->

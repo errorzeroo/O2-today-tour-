@@ -23,7 +23,7 @@ h3{
     margin-bottom: 20px;
   }
 
-.text1 {
+span {
 
     font-family: 'Jua', sans-serif;
     font-size: 18px;
@@ -102,4 +102,15 @@ button:disabled {
 
 #schedule_input{
     border = solid;
+}
+
+table{
+    margin: auto;
+    border: 1px solid black;
+}
+
+td, th{
+    border: 1px solid gray;
+    padding: 5px;
+    text-align: center;
 }
