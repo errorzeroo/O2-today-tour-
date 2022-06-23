@@ -17,8 +17,8 @@ def schedulelist(request):
 
 
 def finallist(request):
-    place_list = hotplace.objects.get('tour_place')
-    return render(request, 'schedule_app/schedule_list.html',{'place_list': place_list})
+    model = hotplace
+    template_name = 'schedule_app/schedule_list.html'
 
 
 def create(request):
@@ -36,19 +36,12 @@ def create(request):
 
 
 def day(request):
-    # ad = adddate.objects.get(request.POST.get(''))   # adddate id에 해당하는 애를 가져오기
-    place = hotplace(tour_place=request.GET.get('place'), days=request.GET.get('num'))
-    place.save()
+    if request.GET.get('place') != None:
+        place = Hotplace(tour_place=request.GET.get('place'), days=request.GET.get('test'), tour_id=request.GET.get('fk'))
+        place.save()
 
-    return redirect('/schedule_app/finallist')
-    # return render(request, 'schedule_app/schedule_list.html', {'day': days1})
+        return redirect('/schedule_app/finallist')
 
-
-# def create_hotplace(request):
-#     place = hotplace(tour_place=request.GET.get('place'), days=request.GET.get('num'))
-#     place.save()
-#
-#     return redirect('/schedule_app/list')
 
 
 

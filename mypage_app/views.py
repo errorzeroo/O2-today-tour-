@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from board.models import Board
+from board.models import Board, Reply
 from django.db import models
 
 
@@ -12,8 +12,8 @@ def index(request):
         user.save()
         return redirect("/")
     boards = Board.objects.all()
-    context = {'boards':boards}
-
+    reply = Reply.objects.all()
+    context = {'boards':boards,"reply":reply}
     return render(request, 'mypage_app/mypage.html', context)
 
 
